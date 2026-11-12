@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface faltaDao extends JpaRepository<falta, Long> {
 
-    // Buscar todas las faltas asociadas al ID de un estudiante específico
     List<falta> findByestudianteId(Long estudianteId);
+    
 }
