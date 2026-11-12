@@ -10,29 +10,32 @@ public class estudiante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true, length = 20)
+    private String cedula;
+
     @Column(nullable = false, length = 100)
     private String nombre;
 
     @Column(nullable = false, unique = true, length = 150)
     private String correo;
 
-    @Column (nullable = false, unique = true, length = 100)
-    private String cedula;
-
-    @Column(nullable = false, length = 100)
-    private String programa;
+    @Column(nullable = false, length = 50)
+    private String semestre;
 
     public estudiante() {}
 
-    public estudiante(String nombre, String correo,String cedula, String programa) {
+    public estudiante(String cedula, String nombre, String correo, String semestre) {
+        this.cedula = cedula;
         this.nombre = nombre;
         this.correo = correo;
-        this.cedula = cedula;
-        this.programa = programa;
+        this.semestre = semestre;
     }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public String getCedula() { return cedula; }
+    public void setCedula(String cedula) { this.cedula = cedula; }
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
@@ -40,9 +43,6 @@ public class estudiante {
     public String getCorreo() { return correo; }
     public void setCorreo(String correo) { this.correo = correo; }
 
-    public String getCedula() { return cedula; }
-    public void setCedula(String cedula) { this.cedula = cedula; }
-
-    public String getPrograma() { return programa; }
-    public void setPrograma(String programa) { this.programa = programa; }
+    public String getSemestre() { return semestre; }
+    public void setSemestre(String semestre) { this.semestre = semestre; }
 }
