@@ -19,13 +19,13 @@ public class nota {
     @Column(nullable = false, length = 200)
     private String observacion;
 
-
     @ManyToOne 
     @JoinColumn(name = "estudiante_id", nullable = false)
     private estudiante estudiante;
+
     public nota() {}
 
-    public nota(double valor, String tipo, String observacion, estudiante estudiante ) {
+    public nota(double valor, String tipo, String observacion, estudiante estudiante) {
         this.valor = valor;
         this.tipo = tipo;
         this.observacion = observacion;
@@ -46,5 +46,4 @@ public class nota {
 
     public estudiante getEstudiante() { return estudiante; }
     public void setEstudiante(estudiante estudiante) { this.estudiante = estudiante; }
-
 }
