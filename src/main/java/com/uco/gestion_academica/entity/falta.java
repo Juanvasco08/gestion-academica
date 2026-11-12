@@ -14,8 +14,11 @@ public class falta {
     @Column(nullable = false)
     private LocalDate fecha;
 
-    @Column(length = 250)
-    private String motivo;
+    @Column(nullable = false, length = 50)
+    private String tipo;
+
+    @Column(nullable = false, length = 200)
+    private String observacion;
 
     @ManyToOne
     @JoinColumn(name = "estudiante_id", nullable = false)
@@ -23,9 +26,10 @@ public class falta {
 
     public falta() {}
 
-    public falta(LocalDate fecha, String motivo, estudiante estudiante) {
+    public falta(LocalDate fecha, String tipo, String observacion, estudiante estudiante) {
         this.fecha = fecha;
-        this.motivo = motivo;
+        this.tipo = tipo;
+        this.observacion = observacion;
         this.estudiante = estudiante;
     }
 
@@ -35,8 +39,11 @@ public class falta {
     public LocalDate getFecha() { return fecha; }
     public void setFecha(LocalDate fecha) { this.fecha = fecha; }
 
-    public String getMotivo() { return motivo; }
-    public void setMotivo(String motivo) { this.motivo = motivo; }
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
+
+    public String getObservacion() { return observacion; }
+    public void setObservacion(String observacion) { this.observacion = observacion; }
 
     public estudiante getEstudiante() { return estudiante; }
     public void setEstudiante(estudiante estudiante) { this.estudiante = estudiante; }
