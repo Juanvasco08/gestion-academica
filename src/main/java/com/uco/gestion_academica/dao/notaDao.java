@@ -10,4 +10,5 @@ import java.util.List;
 public interface notaDao extends JpaRepository<nota, Long> {
 
     List<nota> findByestudianteId(long estudianteId);
+    
 }
