@@ -12,5 +12,4 @@ public interface profesorDao extends JpaRepository<profesor, Long> {
     Optional<profesor> findByCedula(String cedula);
 
     boolean existsByCedula(String cedula);
-
 }
